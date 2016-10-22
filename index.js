@@ -27,7 +27,7 @@ class Deploy {
     const cliOptions          = this.serverless.pluginManager.cliOptions;
     const sdk                 = this.serverless.pluginManager.plugins.find( item => item.constructor.name === 'AwsDeploy').sdk;
     const AWS                 = sdk.sdk;
-    const credentials         = sdk.getCredentials(cliOptions.stage,cliOptions.region);
+    const credentials         = sdk.getCredentials(cliOptions.region, cliOptions.stage);
     const S3                  = new AWS.S3(credentials);
     const CloudFormation      = new AWS.CloudFormation(credentials);
     const bucketNotifications = this.serverless.service.getAllFunctions()
