@@ -90,7 +90,7 @@ endpoints:
 functions:
   someFunction: arn:aws:lambda:region:accountid:function:service-name-stage-someFunction
 
-> sls s3deploy
+> sls s3deploy --region REGON --stage STAGE
 Attaching event(s) to: someFunction
 Done.
 
